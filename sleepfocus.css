@@ -6,14 +6,14 @@
     box-sizing: border-box;
 }
 
-body {
+body{
     background: linear-gradient(to bottom, #b6f0f5, #d7f9fc);
     color: #222;
     line-height: 1.6;
 }
 
 /*Encabezado*/
-header {
+header{
     background: linear-gradient(135deg, #63c9cc, #7ad6e0);
     padding: 15px;
     text-align: center;
@@ -21,7 +21,7 @@ header {
     position: relative;
 }
 
-.logo-text {
+.logo-text{
     font-size: 18px;
     font-weight: 600;
     color: #023e45;
@@ -29,11 +29,13 @@ header {
 }
 
 /*Imagen del logo o portada*/
-.logo-img img {
+.logo-img img{
     border-radius: 12px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     margin: 10px auto;
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 /*Main*/
@@ -49,9 +51,8 @@ main{
     margin-top: 2rem;
 }
 
-
 /*Secciones*/
-.container1 {
+.container{
     background-color: #63c9cc;
     padding: 10px;
     border-radius: 10px;
@@ -61,14 +62,14 @@ main{
     animation: floatIn 1.5s ease;
 }
 
-.container1 p {
+.container p{
     margin-top: 10px;
     font-size: 16px;
     color: #03393e;
 }
 
 /*Botones/Links*/
-.link-btn {
+.link-btn{
     text-decoration: none;
     display: block;
     background: linear-gradient(135deg, #7F7FD5, #86A8E7, #91EAE4);
@@ -80,22 +81,25 @@ main{
     transition: all 0.3s ease;
 }
 
-.link-btn:hover {
+.link-btn:hover{
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     background: linear-gradient(135deg, #91EAE4, #86A8E7, #7F7FD5);
 }
 
 /*Aside*/
-aside img {
+aside img{
     border-radius: 16px;
     margin: 20px auto;
     display: block;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    max-width: 400px;
+    width: 100%;
+    height: auto;
 }
 
 /*Footer*/
-footer {
+footer{
     background-color: #63c9cc;
     color: #023e45;
     padding: 20px;
@@ -106,12 +110,94 @@ footer {
 }
 
 /*Animaciones suaves*/
-@keyframes fadeIn {
+@keyframes fadeIn{
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes floatIn {
+@keyframes floatIn{
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Diseño responsive --- */
+/* Tablets */
+@media (max-width: 1024px) {
+  main{
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  header{
+    padding: 10px;
+  }
+
+  .logo-text{
+    font-size: 17px;
+  }
+
+  .container{
+    width: 90%;
+  }
+
+  aside img{
+    width: 70%;
+    max-width: 350px;
+  }
+}
+
+/* Móviles — versión compacta */
+@media (max-width: 600px){
+  body{
+    line-height: 1.4;
+  }
+
+  header{
+    padding: 6px;
+  }
+
+  .logo-text{
+    font-size: 14px;
+  }
+
+  .logo-img img{
+    max-width: 75%;
+  }
+
+  main{
+    flex-direction: column;
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .container{
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+
+  .container1{
+    font-size: 13px;
+  }
+
+  .link-btn{
+    font-size: 13px;
+    padding: 8px 16px;
+    width: 90%;
+    margin: 5px auto;
+  }
+
+  aside img{
+    width: 80%;
+    max-width: 250px;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+
+  footer{
+    font-size: 12px;
+    padding: 10px;
+  }
 }
